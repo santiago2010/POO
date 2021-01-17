@@ -14,6 +14,15 @@ public class Venda {
 
     private List<Produto> listaProdutos = new ArrayList<Produto>();
 
+    public List<Produto> getListaProdutos() {
+        return listaProdutos;
+    }
+
+    public void addProduto(Produto produto){
+        //Poderia fazer varias validações antes de adicionar produtos na lista
+        this.listaProdutos.add(produto);
+    }
+
     public Long getId() {
         return id;
     }
@@ -54,6 +63,15 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", nomeCliente='" + nomeCliente + '\'' +
+                ", enderecoEntrega='" + enderecoEntrega + '\'' +
+                ", valorTotal=" + valorTotal +
+                ", listaProdutos=" + listaProdutos +
+                '}';
+    }
 }
