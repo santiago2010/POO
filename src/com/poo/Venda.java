@@ -7,7 +7,20 @@ import java.util.List;
 public class Venda {
 
     private Long id;
-    private String descricao;
+
+    public String getDescricaoVenda() {
+        return descricaoVenda;
+    }
+
+    public void setDescricaoVenda(String descricaoVenda) {
+        this.descricaoVenda = descricaoVenda;
+    }
+
+    public void setListaProdutos(List<Produto> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
+
+    private String descricaoVenda;
     private String nomeCliente;
     private  String enderecoEntrega;
     private BigDecimal valorTotal;
@@ -23,20 +36,20 @@ public class Venda {
         this.listaProdutos.add(produto);
     }
 
+    public double totalVenda(){
+       double total = 0.0;
+        for (Produto produto : listaProdutos){
+            total += produto.getValorProduto().doubleValue();
+        }
+        return total;
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public String getNomeCliente() {
@@ -67,7 +80,7 @@ public class Venda {
     public String toString() {
         return "Venda{" +
                 "id=" + id +
-                ", descricao='" + descricao + '\'' +
+                ", descricaoVenda='" + descricaoVenda + '\'' +
                 ", nomeCliente='" + nomeCliente + '\'' +
                 ", enderecoEntrega='" + enderecoEntrega + '\'' +
                 ", valorTotal=" + valorTotal +

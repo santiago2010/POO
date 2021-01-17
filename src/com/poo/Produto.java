@@ -31,4 +31,13 @@ public class Produto {
     public void setValorProduto(BigDecimal valorProduto) {
         this.valorProduto = valorProduto;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", nomeProduto='" + nomeProduto + '\'' +
+                ", valorProduto=" + valorProduto +
+                '}';
+    }
 }
